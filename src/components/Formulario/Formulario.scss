@@ -1,0 +1,81 @@
+@use "../../globals.scss";
+$width: 425px;
+
+@mixin mobile {
+  @media (max-width:#{$width}) {
+    @content;
+  }
+}
+
+.o-container-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+  @include mobile{
+    flex-direction: column;
+   
+  }
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    @include mobile{
+        flex-direction: column;
+       
+      }
+
+    input {
+      width: 100%;
+      padding: 0.7rem 1.2rem;
+      margin: 0 1rem;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+      border-radius: 0.4rem;
+      @include mobile{
+        margin: 0.6rem 0;
+        font-family: globals.$fuente2;
+       
+      }
+    }
+    input:focus {
+      border: 1.2px solid #555;
+    }
+
+    button {
+      background-color: gray;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.8rem;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1rem;
+      border-radius: 0.4rem;
+
+      &:hover {
+        color: #555;
+        background-color: white;
+        border: 0.5px solid #555;
+        font-weight: 400;
+      }
+      &:active {
+        background-color: #555;
+        color: white;
+        font-weight: 500;
+      }
+    }
+  }
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    color: red;
+  }
+}

@@ -1,23 +1,37 @@
-.o-container{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+@use "../../globals.scss";
+$width: 425px;
+@mixin mobile {
+  @media (max-width:#{$width}) {
+    @content;
+  }
+}
 
-    .o-derecha-container{
+.o-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    
-    h2{
-        color:red;
+  @include mobile {
+   
+    margin: 0;
+  }
+
+  h1 {
+    color: #555;
+    font-family: globals.$fuente;
+    @include mobile {
+      font-size: 1.3rem;
+      text-align: center;
     }
-    
-    
-    pre{    
-        
-        
-        
-      }
-    
+  }
+
+  pre {
+    font-family: globals.$fuente2;
+
+    @include mobile {
+      font-size: 0.9rem;
     }
+  }
 }

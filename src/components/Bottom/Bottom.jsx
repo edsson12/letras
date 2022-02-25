@@ -1,20 +1,16 @@
 import React from "react";
 import "./Bottom.scss";
-import Biografia from "../Biografia/Biografia.jsx";
 
-const Bottom = ({ lyrics }) => {
+
+const Bottom = ({ lyrics, cancion }) => {
   if (lyrics.length === 0) return null;
+
+  
 
   return (
     <div className="o-container">
-
-      <Biografia />
-
-        <div className="o-derecha-container">
-      <h2>Letra</h2>
+      <h1> {cancion}, Letra</h1>
       <pre>{lyrics}</pre>
-      </div>
-
     </div>
   );
 };

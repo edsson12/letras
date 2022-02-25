@@ -1,14 +1,17 @@
 import React from "react";
 import { useState } from "react";
+import './Formulario.scss'
 
-const Formulario = ({setBusquedaLetra}) => {
+const Formulario = ({setBusquedaLetra,error,setError}) => {
   const [busqueda, setBusqueda] = useState({
     artista: "",
     cancion: "",
   });
 
+  
+
   const { artista, cancion } = busqueda;
-  const [error, setError] = useState(false)
+  
 
   const actualizarState = (e) => {
     setBusqueda({
@@ -22,15 +25,20 @@ const Formulario = ({setBusquedaLetra}) => {
 
     if (artista.trim()===''|| cancion.trim()==='') {
         setError(true)
+
+        setTimeout(() => {
+          setError(false)
+        }, 4000);
         return;
     }
-    setError(false)
+    
+    
 
     setBusquedaLetra(busqueda);
   };
 
   return (
-    <div>
+    <div className="o-container-form">
       <form onSubmit={buscarInfo}>
         <input
           type="text"
@@ -51,7 +59,7 @@ const Formulario = ({setBusquedaLetra}) => {
         <button type="submit">Buscar</button>
       </form>
 
-      {error && <p>Papi mete todos los datos</p>}
+      {error && <p> Papi mete todos los datos</p>}
     </div>
   );
 };

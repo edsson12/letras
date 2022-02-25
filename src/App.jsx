@@ -3,12 +3,15 @@ import { useState } from "react";
 import Formulario from "./components/Formulario/Formulario";
 import axios from 'axios'
 import Bottom from "./components/Bottom/Bottom";
+import NavBar from "./components/NavBar/NavBar";
 
 
 function App() {
 
   const [busquedaLetra, setBusquedaLetra] = useState({});
   const [lyrics, setLyrics] = useState("");
+
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     
@@ -22,6 +25,7 @@ function App() {
 
       const result = await axios(URL);
       
+      
       setLyrics(result.data.lyrics)
     }
     consultarAPI();
@@ -32,12 +36,16 @@ function App() {
 
   return (
     <div>
+      <NavBar/>
       <Formulario 
-      setBusquedaLetra={setBusquedaLetra} />
+      setBusquedaLetra={setBusquedaLetra}
+      error={error}
+      setError={setError} />
 
 
       <Bottom 
       lyrics={lyrics}
+      cancion={busquedaLetra.cancion}
       />
 
       
