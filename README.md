@@ -1,5 +1,7 @@
 Proyecto de letras de canciones, realizado con React.js y Axios, este proyecto consume una API para mostrar las canciones buscadas. 
 
+Esta app la puedes ver en: https://edssonco-lyrics-app.netlify.app/
+
 
 
 
