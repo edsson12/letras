@@ -1,4 +1,4 @@
-@use "../../globals.scss";
+@import "../../globals.scss";
 $width: 425px;
 
 @mixin mobile {
@@ -39,7 +39,7 @@ $width: 425px;
       border-radius: 0.4rem;
       @include mobile{
         margin: 0.6rem 0;
-        font-family: globals.$fuente2;
+        font-family: $fuente2;
        
       }
     }

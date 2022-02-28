@@ -1,4 +1,4 @@
-@use "../../globals.scss";
+@import "../../globals.scss";
 
 $width: 425px;
 
@@ -33,9 +33,9 @@ $width: 425px;
 
     h2 {
       text-decoration: none;
-      font-family: globals.$fuente;
+      font-family: $fuente;
       font-size: 2rem;
-      color: globals.$secundaryColor;
+      color: $secundaryColor;
       font-weight: 700;
       
       transition: all ease 0.5s;
