@@ -1,3 +1,8 @@
+Proyecto de letras de canciones, realizado con React.js y Axios, este proyecto consume una API para mostrar las canciones buscadas. 
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
